@@ -4,5 +4,4 @@ ruby '2.0.0'
 gem 'pry'
 gem 'nokogiri'
 gem 'json'
-
-gem 'figaro'
+gem 'mongoid'

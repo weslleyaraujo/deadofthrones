@@ -1,15 +1,20 @@
 require 'pry'
+require 'mongoid'
+
 require './info.rb'
 require './image.rb'
 
-class ParseHTML
-  attr_reader :link, :info
+
+class Parser
+  attr_reader :link, :info, :image
 
   def initialize link
     @link = link
+  end
+
+  def fill
     @info = Info.new slug
     @image = Image.new slug
-    pry
   end
 
   def as_json
@@ -22,5 +27,9 @@ class ParseHTML
 
   def slug
     @link.attribute('href').value.split('/').last
+  end
+
+  def data
+    [as_json, @info.as_json, @image.as_json].reduce &:merge
   end
 end
