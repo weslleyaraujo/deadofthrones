@@ -7,7 +7,7 @@ require 'mongoid'
 require './parser.rb'
 require './character.rb'
 
-Mongoid.load!('./config/mongoid.yml')
+Mongoid.load!('../config/mongoid.yml')
 
 @npages = 20
 @charurl = 'http://gameofthrones.wikia.com/index.php?action=ajax&articleId=Status%3A+Dead&method=axGetArticlesPage&rs=CategoryExhibitionAjax&page='
