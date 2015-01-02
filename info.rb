@@ -2,15 +2,13 @@ require 'open-uri'
 require 'nokogiri'
 
 class Info
-  attr_reader :url
-  attr_reader :slug
-  attr_reader :get
+  attr_reader :url, :slug, :get
 
   def initialize slug
     @slug = slug
     @url = 'http://gameofthrones.wikia.com/api.php?action=query&prop=revisions&rvprop=content&format=xml&titles='
     @xml = get
-    puts by_match 'Death='
+    puts  as_json
     pry
   end
 
@@ -19,7 +17,8 @@ class Info
   end
 
   def quote
-    @xml.match(/\{\{Quote(.*?)\}\}/).to_s
+    @xml.match(/\{\{Quote(.*?)\}\}/)
+      .to_s
       .gsub(/\{\{Quote\|/, '')
       .gsub(/\}\}/, '')
       .gsub(/\[\[/, '')
@@ -29,7 +28,8 @@ class Info
 
   def as_json
     {
-      :quote => quote
+      :quote => quote,
+      :death => by_match('Death=')
     }
   end
 
@@ -41,6 +41,8 @@ class Info
         found = item.split('=').last
           .gsub(/\[\[/, '')
           .gsub(/\]\]/, '')
+
+        break
       end
     }
 
