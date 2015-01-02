@@ -21,8 +21,7 @@ Mongoid.load!('./config/mongoid.yml')
 
     if Character.where(slug: @parsed.slug).count == 0
       @parsed.fill
-      Character.new @parsed.data
-
+      Character.create @parsed.data
       puts @parsed.data
     end
   }

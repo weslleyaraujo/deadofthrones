@@ -34,7 +34,7 @@ class Info
   def by_match name
     regex = Regexp.new(name)
     found = ''
-    @xml.split('|').reject! { |c| c.empty? }.each { |item|
+    @xml.split('|').each { |item|
       if item =~ regex
         found = item.split('=').last
           .gsub(/\[\[/, '')
