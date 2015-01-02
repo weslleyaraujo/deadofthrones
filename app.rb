@@ -16,5 +16,3 @@ require './parseHTML.rb'
     ParseHTML.new item.css('a')
   }
 end
-
-# http://gameofthrones.wikia.com/api.php?action=imageserving&wisTitle=Jojen_Reed
