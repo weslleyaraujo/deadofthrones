@@ -1,18 +1,20 @@
 require 'pry'
-require 'nokogiri'
+require './info.rb'
 
 class ParseHTML
-  @@link
+  attr_reader :link
+  attr_reader :info
 
   def initialize link
-    @@link = link
-    puts to_json
+    @link = link
+    @info = Info.new as_json[:slug]
   end
 
-  def to_json
+  def as_json
     {
-      :url => @@link.attribute('href').value,
-      :title => @@link.attribute('title').value
+      :url => @link.attribute('href').value,
+      :title => @link.attribute('title').value,
+      :slug => @link.attribute('href').value.split('/').last
     }
   end
 end
