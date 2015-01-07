@@ -9,7 +9,7 @@ after that execute the following commands:
 
 ```
 bundle install
-MONGOID_ENV=development bundle exec ruby app.rb
+MONGOID_ENV=development bundle exec ruby crawler/app.rb
 ```
 
 Still in development..
