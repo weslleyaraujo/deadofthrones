@@ -9,4 +9,6 @@ class Character
   field :title,   type: String
   field :slug,    type: String
   field :image,   type: String
+  field :aka,     type: String
+  field :place,   type: String
 end

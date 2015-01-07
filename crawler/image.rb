@@ -22,7 +22,7 @@ class Image
 
   def save
     if !image_url.empty?
-      open('images/' + @file, 'wb') do |file|
+      open('./crawler/images/' + @file, 'wb') do |file|
         file << open(image_url).read
       end
     end

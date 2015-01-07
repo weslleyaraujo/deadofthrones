@@ -9,7 +9,6 @@ class Info
     @slug = slug
     @url = 'http://gameofthrones.wikia.com/api.php?action=query&prop=revisions&rvprop=content&format=xml&titles='
     @xml = get
-    pry
   end
 
   def get
@@ -29,7 +28,9 @@ class Info
   def as_json
     {
       :quote => quote.strip,
-      :death => by_match('Death=').strip
+      :death => by_match('Death=').strip,
+      :aka => by_match('Aka=').strip,
+      :place => by_match('Place=').strip
     }
   end
 
@@ -45,6 +46,14 @@ class Info
       end
     }
 
-    found
+    remove_html(found)
+  end
+
+  def remove_html value
+    value = Nokogiri::HTML.parse(value)
+    value.text
+      .gsub(/\&.+;/, "")
+      .gsub(/<\/?[^>]*>/, "")
+      .gsub(/[\n]/, '')
   end
 end
