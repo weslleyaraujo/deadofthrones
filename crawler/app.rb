@@ -4,10 +4,10 @@ require 'open-uri'
 require 'pry'
 require 'mongoid'
 
-require './parser.rb'
-require './character.rb'
+require './crawler/parser.rb'
+require './crawler/character.rb'
 
-Mongoid.load!('../config/mongoid.yml')
+Mongoid.load!('./config/mongoid.yml')
 
 @npages = 20
 @charurl = 'http://gameofthrones.wikia.com/index.php?action=ajax&articleId=Status%3A+Dead&method=axGetArticlesPage&rs=CategoryExhibitionAjax&page='
@@ -19,6 +19,7 @@ Mongoid.load!('../config/mongoid.yml')
   page.css('.category-gallery-item').each { |item| 
     @parsed = Parser.new item.css('a')
 
+      @parsed.fill
     if Character.where(slug: @parsed.slug).count == 0
       @parsed.fill
       Character.create @parsed.data

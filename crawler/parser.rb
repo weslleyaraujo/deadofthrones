@@ -1,8 +1,8 @@
 require 'pry'
 require 'mongoid'
 
-require './info.rb'
-require './image.rb'
+require './crawler/info.rb'
+require './crawler/image.rb'
 
 
 class Parser

@@ -1,5 +1,6 @@
 require 'open-uri'
 require 'nokogiri'
+require 'pry'
 
 class Info
   attr_reader :url, :slug, :get, :xml
@@ -8,6 +9,7 @@ class Info
     @slug = slug
     @url = 'http://gameofthrones.wikia.com/api.php?action=query&prop=revisions&rvprop=content&format=xml&titles='
     @xml = get
+    pry
   end
 
   def get
