@@ -5,3 +5,8 @@ gem 'pry'
 gem 'nokogiri'
 gem 'json'
 gem 'mongoid'
+
+gem 'sinatra'
+gem 'thin'
+gem 'rake'
+gem 'bundler'
