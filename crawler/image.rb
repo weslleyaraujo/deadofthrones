@@ -1,5 +1,7 @@
 class Image
+
   attr_reader :slug, :url, :xml, :file
+
   def initialize slug
     @slug = slug
     @url = 'http://gameofthrones.wikia.com/api.php?action=imageserving&format=xml&wisTitle='

@@ -3,6 +3,7 @@ require 'nokogiri'
 require 'pry'
 
 class Info
+
   attr_reader :url, :slug, :get, :xml
 
   def initialize slug

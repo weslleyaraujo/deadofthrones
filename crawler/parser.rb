@@ -6,6 +6,7 @@ require './crawler/image.rb'
 
 
 class Parser
+
   attr_reader :link, :info, :image
 
   def initialize link
