@@ -1,5 +1,3 @@
-bigode: 1
-
 development:
   pages: 20
   char_url: 'http://gameofthrones.wikia.com/index.php?action=ajax&articleId=Status%3A+Dead&method=axGetArticlesPage&rs=CategoryExhibitionAjax&page='
