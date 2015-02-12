@@ -12,22 +12,22 @@ module.exports = function (grunt) {
   config.compass = {
     dev: {
       options: {
-        sassDir: 'assets/sass',
-        cssDir: 'assets/css',
+        sassDir: 'public/assets/sass',
+        cssDir: 'public/assets/css',
         imagesDir: 'assets/images',
         outputStyle: 'nested',
         environment: 'development',
-        force: true
+        force: true,
       }
     },
     dist: {
       options: {
-        sassDir: 'assets/sass',
-        cssDir: 'assets/css',
+        sassDir: 'public/assets/sass',
+        cssDir: 'public/assets/css',
         imagesDir: 'dist/assets/images',
         outputStyle: 'compressed',
         noLineComments: true,
-        environment: 'production'
+        environment: 'production',
       }
     }
   };
@@ -37,8 +37,8 @@ module.exports = function (grunt) {
   config.watch = {
     sass: {
       files: [
-        'assets/sass/*.sass',
-        'assets/sass/**/*.sass'
+        'public/assets/sass/*.sass',
+        'public/assets/sass/**/*.sass'
       ],
       tasks: ['compass:dev']
     },

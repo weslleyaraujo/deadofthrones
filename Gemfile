@@ -13,4 +13,5 @@ gem 'bundler'
 
 group :development do
   gem 'rerun'
+  gem 'compass'
 end

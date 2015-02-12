@@ -11,3 +11,7 @@ set :public_folder, 'public'
 get '/' do
   erb :index
 end
+
+get '/foo' do
+  'bar'
+end

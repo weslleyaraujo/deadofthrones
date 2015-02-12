@@ -1,0 +1,21 @@
+{
+  "name": "deadofthrones",
+  "version": "0.0.0",
+  "homepage": "https://github.com/weslleyaraujo/deadofthrones",
+  "authors": [
+    "Weslley Araujo <weslleyaraujo20@gmail.com>"
+  ],
+  "description": "Playing around with the large number of characters that our sweet George R.R Martin killed on the HBO Serie Game of Thrones.",
+  "keywords": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.3"
+  }
+}

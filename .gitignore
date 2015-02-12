@@ -43,5 +43,5 @@ node_modules
 crawler/images/
 .DS_Store
 resources/*.psd
-
-
+public/assets/css/
+bower_components/
