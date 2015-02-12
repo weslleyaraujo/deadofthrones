@@ -9,5 +9,5 @@ set :public_folder, 'public'
 
 # Application routes
 get '/' do
-  'ae'
+  erb :index
 end

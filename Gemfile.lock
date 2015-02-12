@@ -12,12 +12,20 @@ GEM
       tzinfo (~> 0.3.37)
     bson (2.3.0)
     builder (3.1.4)
+    celluloid (0.16.0)
+      timers (~> 4.0.0)
     coderay (1.1.0)
     connection_pool (2.1.0)
     daemons (1.1.9)
     eventmachine (1.0.3)
+    ffi (1.9.6)
+    hitimes (1.2.2)
     i18n (0.7.0)
     json (1.8.1)
+    listen (2.8.5)
+      celluloid (>= 0.15.2)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
     method_source (0.8.2)
     mini_portile (0.6.2)
     minitest (4.7.5)
@@ -43,6 +51,11 @@ GEM
     rack-protection (1.5.3)
       rack
     rake (10.0.4)
+    rb-fsevent (0.9.4)
+    rb-inotify (0.9.5)
+      ffi (>= 0.5.0)
+    rerun (0.10.0)
+      listen (~> 2.7, >= 2.7.3)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -54,6 +67,8 @@ GEM
       rack (>= 1.0.0)
     thread_safe (0.3.4)
     tilt (1.4.1)
+    timers (4.0.1)
+      hitimes
     tzinfo (0.3.42)
 
 PLATFORMS
@@ -66,5 +81,6 @@ DEPENDENCIES
   nokogiri
   pry
   rake
+  rerun
   sinatra
   thin

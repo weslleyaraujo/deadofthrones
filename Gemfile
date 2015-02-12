@@ -10,3 +10,7 @@ gem 'sinatra'
 gem 'thin'
 gem 'rake'
 gem 'bundler'
+
+group :development do
+  gem 'rerun'
+end
