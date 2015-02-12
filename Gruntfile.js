@@ -12,6 +12,9 @@ module.exports = function (grunt) {
   config.compass = {
     dev: {
       options: {
+        specify: [
+          'public/assets/sass/main.sass'
+        ],
         sassDir: 'public/assets/sass',
         cssDir: 'public/assets/css',
         imagesDir: 'assets/images',
@@ -22,6 +25,9 @@ module.exports = function (grunt) {
     },
     dist: {
       options: {
+        specify: [
+          'public/assets/sass/main.sass'
+        ],
         sassDir: 'public/assets/sass',
         cssDir: 'public/assets/css',
         imagesDir: 'dist/assets/images',
