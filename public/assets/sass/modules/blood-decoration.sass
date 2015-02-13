@@ -1,0 +1,27 @@
+// *****
+// Blood Decoration
+//
+// ***
+
+$module-name: 'blood-decoration'
+
+.#{$module-name}
+  background-color: $main-background-color
+  position: absolute
+  width: 100%
+  height: 30px
+  z-index: $z-index-blood-decoration
+  &.is-first
+    bottom: -12px
+    +transform(rotate(-1deg))
+
+.#{$module-name}-item
+  position: absolute
+
+  // overwrite by sprite name
+  &.blood-up-01
+    right: 0
+
+  &.blood-up-02
+    left: 0
+    top: -25px

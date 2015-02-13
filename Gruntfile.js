@@ -20,7 +20,6 @@ module.exports = function (grunt) {
         imagesDir: 'public/assets/images',
         outputStyle: 'nested',
         environment: 'development',
-        force: true,
         raw: 'http_generated_images_path = \'/assets/images\''
       }
     },
