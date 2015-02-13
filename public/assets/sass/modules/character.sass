@@ -1,0 +1,35 @@
+// *****
+// Character
+//
+// ***
+
+$module-name: 'character'
+$module-font-size: 150px
+
+.#{$module-name}
+  position: relative
+
+.#{$module-name}-title
+  color: $main-text-color
+  font-size: $module-font-size
+  margin: 40px 0 0 0
+
+.#{$module-name}-image-holder
+  left: -140px
+  position: absolute
+  img
+    top: 55px
+    position: absolute
+    left: 182px
+    +border-radius(50%)
+
+.#{$module-name}-info
+  width: 640px
+  margin: 50px 0 0 0
+
+.#{$module-name}-info-list
+  li
+    margin: 10px 0
+
+.#{$module-name}-info-item
+  font-size: 30px
