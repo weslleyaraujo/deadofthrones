@@ -1,0 +1,29 @@
+// *****
+// Down Arrow
+//
+// ***
+
+$module-name: 'down-arrow'
+$module-font-size: 120px
+
+.#{$module-name}
+  font-size: $module-font-size
+  position: absolute
+  width: 100%
+  bottom: -20px
+
+.#{$module-name}-wrap
+  width: 170px
+  height: 150px
+  margin: 0 auto
+  position: relative
+
+.#{$module-name}-piece
+  position: absolute
+
+.#{$module-name}-left
+  +transform(rotate(-47deg))
+
+.#{$module-name}-right
+  left: 70px
+  +transform(rotate(33deg))
