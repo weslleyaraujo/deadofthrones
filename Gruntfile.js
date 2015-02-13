@@ -17,10 +17,11 @@ module.exports = function (grunt) {
         ],
         sassDir: 'public/assets/sass',
         cssDir: 'public/assets/css',
-        imagesDir: 'assets/images',
+        imagesDir: 'public/assets/images',
         outputStyle: 'nested',
         environment: 'development',
         force: true,
+        raw: 'http_generated_images_path = \'/assets/images\''
       }
     },
     dist: {
@@ -34,6 +35,7 @@ module.exports = function (grunt) {
         outputStyle: 'compressed',
         noLineComments: true,
         environment: 'production',
+        raw: 'http_generated_images_path = \'/assets/images\''
       }
     }
   };
