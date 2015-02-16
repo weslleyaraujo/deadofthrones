@@ -1,5 +1,9 @@
 require 'rubygems'
 require 'sinatra'
+require './crawler/character.rb'
+
+# load mongoid config
+Mongoid.load!('./config/mongoid.yml')
 
 # Set Sinatra variables
 set :app_file, __FILE__
@@ -13,5 +17,6 @@ get '/' do
 end
 
 get '/foo' do
-  'bar'
+  content_type :json
+  Character.all.sample.to_json
 end

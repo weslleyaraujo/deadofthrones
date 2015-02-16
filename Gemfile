@@ -12,6 +12,7 @@ gem 'rake'
 gem 'bundler'
 
 group :development do
+  gem 'pry'
   gem 'rerun'
   gem 'compass'
 end
