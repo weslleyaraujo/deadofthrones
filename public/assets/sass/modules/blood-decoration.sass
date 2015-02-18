@@ -10,12 +10,12 @@ $module-name: 'blood-decoration'
   position: absolute
   width: 100%
   height: 30px
-  z-index: $z-index-blood-decoration
   &.is-first
     bottom: -12px
 
 .#{$module-name}-item
   position: absolute
+  z-index: $z-index-blood-decoration-item
 
   // overwrite by sprite name
   &.blood-up-01
