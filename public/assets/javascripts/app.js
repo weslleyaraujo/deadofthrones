@@ -9,7 +9,7 @@
     this.elements = {};
     this.elements.$all = $('html, body');
     this.elements.$scrollTo = $('.scroll-to');
-    this.elements.$infinite = $('.infinite-animation');
+    this.elements.$infinite = $('.infinite');
   };
 
   App.prototype.bind = function () {
@@ -25,7 +25,7 @@
   App.prototype.scrollTo = function (selector) {
     try {
       this.elements.$all.animate({
-        scrollTop: $(selector).offset().top + 20
+        scrollTop: $(selector).offset().top
       }, 400);
     } catch (e) {}
 
@@ -33,14 +33,14 @@
   };
 
   App.prototype.onInfiniteClick = function (event) {
-    var $target = $(event.target).closest('.infinite-animation'),
+    var $target = $(event.target).closest('.animated'),
         stop = $target.data('stop-animation');
+
+    console.log(stop);
 
     try {
       if (stop) {
-        $target
-          .removeClass('infinite-animation animated')
-          .removeClass(stop);
+        $target.removeClass(stop);
       }
     } catch (e) {}
   };
