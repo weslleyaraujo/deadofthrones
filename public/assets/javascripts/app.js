@@ -9,21 +9,40 @@
     this.elements = {};
     this.elements.$all = $('html, body');
     this.elements.$scrollTo = $('.scroll-to');
+    this.elements.$infinite = $('.infinite-animation');
   };
 
   App.prototype.bind = function () {
-    this.elements.$scrollTo.on('click', this.scrollTo.bind(this));
+    this.elements.$scrollTo.on('click', this.onScrollToClick.bind(this));
+    this.elements.$infinite.on('click', this.onInfiniteClick.bind(this));
   };
 
-  App.prototype.scrollTo = function (event) {
+  App.prototype.onScrollToClick = function (event) {
     var $target = $(event.target).closest('a');
+    this.scrollTo($target.attr('href'));
+  };
+
+  App.prototype.scrollTo = function (selector) {
     try {
       this.elements.$all.animate({
-        scrollTop: $($target.attr('href')).offset().top + 20
+        scrollTop: $(selector).offset().top + 20
       }, 400);
     } catch (e) {}
 
     event.preventDefault();
+  };
+
+  App.prototype.onInfiniteClick = function (event) {
+    var $target = $(event.target).closest('.infinite-animation'),
+        stop = $target.data('stop-animation');
+
+    try {
+      if (stop) {
+        $target
+          .removeClass('infinite-animation animated')
+          .removeClass(stop);
+      }
+    } catch (e) {}
   };
 
   root.App = App;
