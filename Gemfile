@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.0.0'
 
 gem 'pry'
 gem 'nokogiri'
@@ -10,6 +10,11 @@ gem 'sinatra'
 gem 'thin'
 gem 'rake'
 gem 'bundler'
+
+# Igor APA
+gem 'gemcutter'
+gem 'mongo'
+gem 'bson_ext'
 
 group :development do
   gem 'rerun'
