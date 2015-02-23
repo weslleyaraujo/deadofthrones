@@ -13,5 +13,6 @@ get '/' do
 end
 
 get '/foo' do
-  'bar'
+  content_type :json
+  File.read(File.join('./', 'character.example.json'))
 end

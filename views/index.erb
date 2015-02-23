@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="/assets/css/main.css">
 
 </head>
-<body>
+<body ng-app="dod">
   <div class="full-container is-first">
     <header class="header text-center animated bounceInDown">
       <h1>DEAD OF THRONES</h1>
@@ -45,10 +45,11 @@
   </div>
 
   <div class="full-container is-second is-character"
-    id="character-container">
+    id="character-container"
+    ng-controller="dod.characters.controllers.Character">
     <div class="character wrap">
       <div class="text-center">
-          <h2 class="character-title primary-font">Eddard Stark</h2>
+        <h2 class="character-title primary-font">Eddard Stark</h2>
       </div>
 
       <div class="character-wrap">
@@ -85,9 +86,9 @@
 
   <script src="/assets/bower_components/jquery/dist/jquery.js"></script>
   <script src="/assets/bower_components/angular/angular.js"></script>
-  <script src="/assets/javascripts/app.js"></script>
-  <script>
-    new App();
-  </script>
+
+  <!-- modules -->
+  <script src="/assets/javascripts/bootstrap.js"></script>
+  <script src="/assets/javascripts/modules/characters/characterCtrl.js"></script>
 </body>
 </html>
