@@ -45,4 +45,4 @@ crawler/images/
 resources/*.psd
 public/assets/css/
 public/assets/bower_components
-
+character.example.json
