@@ -46,7 +46,7 @@
 
   <div class="full-container is-second is-character"
     id="character-container"
-    ng-controller="dod.characters.controllers.Character">
+    ng-controller="dod.characters.controllers.Character as characterCtrl">
     <div class="character wrap">
       <div class="text-center">
         <h2 class="character-title primary-font">Eddard Stark</h2>
@@ -60,13 +60,13 @@
         </div>
         <div class="pull-right character-info">
           <ul class="clear-list text-right character-info-list">
-            <li>"Adipisicing dolores quis praesentium alias architecto tenetur quisquam quas. Repellat."</li>
-            <li class="character-info-item"><i class="icons-castle"></i> Winterfell</li>
+            <li>"{{ character.quote }}"</li>
+            <li ng-show="!!character.place" class="character-info-item"><i class="icons-castle"></i> {{ character.place }}</li>
             <li class="character-info-item"><i class="icons-cross"></i> Ipsum veritatis cumque fugiat nobis amet. Quos dolor sed id! </li>
             <li class="character-info-item"><i class="icons-sword"></i><a href="#"> See More</a></li>
         </div>
         <div class="text-center clearfix">
-          <a class="btn" href="#">SHOW ME ANOTHER DEAD!</a>
+          <a class="btn" ng-click="characterCtrl.update()">SHOW ME ANOTHER DEAD!</a>
         </div>
       </div>
     </div>
@@ -87,8 +87,14 @@
   <script src="/assets/bower_components/jquery/dist/jquery.js"></script>
   <script src="/assets/bower_components/angular/angular.js"></script>
 
+  <script src="/assets/javascripts/boot.js"></script>
+  <script src="/assets/javascripts/config.js"></script>
+
+
+  <!-- services -->
+  <script src="/assets/javascripts/shared/services/getCharacter.js"></script>
+
   <!-- modules -->
-  <script src="/assets/javascripts/bootstrap.js"></script>
   <script src="/assets/javascripts/modules/characters/characterCtrl.js"></script>
 </body>
 </html>

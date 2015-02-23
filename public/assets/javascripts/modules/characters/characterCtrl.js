@@ -1,12 +1,22 @@
 ;(function (module) {
   'use strict';
 
-  function Character ($scope) {
+  function Character ($scope, getCharacter) {
     this.$scope = $scope;
-    console.log('fuck yeah');
+    this.getCharacter = getCharacter;
+
+    this.update();
   }
 
-  Character.$inject = ['$scope'];
+  Character.prototype.update = function () {
+    this.getCharacter.get().success(this.onSuccess.bind(this));
+  };
+
+  Character.prototype.onSuccess = function (data) {
+    this.$scope.character = data;
+  };
+
+  Character.$inject = ['$scope', 'dod.shared.services.getCharacter'];
 
   module.controller('dod.characters.controllers.Character', Character);
 
