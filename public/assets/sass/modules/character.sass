@@ -27,7 +27,7 @@ $module-font-size: 140px
 .#{$module-name}-info
   width: 640px
   margin: 50px 0 0 0
-  min-height: 380px
+  height: 445px
 
 .#{$module-name}-info-list
   li
@@ -35,3 +35,9 @@ $module-font-size: 140px
 
 .#{$module-name}-info-item
   font-size: 30px
+
+.#{$module-name}-info, .#{$module-name}-image-holder, .#{$module-name}-title
+  +opacity(1)
+  +transition(0.5s)
+  &.isLoading
+    +opacity(0)

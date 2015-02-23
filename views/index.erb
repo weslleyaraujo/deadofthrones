@@ -49,21 +49,23 @@
     ng-controller="dod.characters.controllers.Character as characterCtrl">
     <div class="character wrap">
       <div class="text-center">
-        <h2 class="character-title primary-font">Eddard Stark</h2>
+        <h2 class="character-title primary-font" ng-class="{ isLoading: isLoading }" >{{ character.title | clearName }}</h2>
       </div>
 
-      <div class="character-wrap">
-        <div class="character-image-holder blood-photo-holder">
+      <div class="character-wrap" >
+        <div class="character-image-holder blood-photo-holder" ng-class="{ isLoading: isLoading }">
           <img class="character-image"
-            src="http://placehold.it/200x200"
+            width="200"
+            height="200"
+            ng-src="/characters/{{ character.image }}"
             alt="">
         </div>
-        <div class="pull-right character-info">
+        <div class="pull-right character-info" ng-class="{ isLoading: isLoading }" >
           <ul class="clear-list text-right character-info-list">
-            <li>"{{ character.quote }}"</li>
+            <li>"{{ character.quote | limitTo:120 }}"</li>
             <li ng-show="!!character.place" class="character-info-item"><i class="icons-castle"></i> {{ character.place }}</li>
-            <li class="character-info-item"><i class="icons-cross"></i> Ipsum veritatis cumque fugiat nobis amet. Quos dolor sed id! </li>
-            <li class="character-info-item"><i class="icons-sword"></i><a href="#"> See More</a></li>
+            <li ng-show="!!character.death" class="character-info-item"><i class="icons-cross"></i> {{ character.death }}</li>
+            <li ng-show="!!character.url" class="character-info-item"><i class="icons-sword"></i><a href="{{ character.url }}"> See More</a></li>
         </div>
         <div class="text-center clearfix">
           <a class="btn" ng-click="characterCtrl.update()">SHOW ME ANOTHER DEAD!</a>
@@ -90,11 +92,14 @@
   <script src="/assets/javascripts/boot.js"></script>
   <script src="/assets/javascripts/config.js"></script>
 
-
   <!-- services -->
   <script src="/assets/javascripts/shared/services/getCharacter.js"></script>
 
+  <!-- filters -->
+  <script src="/assets/javascripts/shared/filters/clearName.js"></script>
+
   <!-- modules -->
   <script src="/assets/javascripts/modules/characters/characterCtrl.js"></script>
+
 </body>
 </html>
