@@ -27,7 +27,16 @@
       </div>
     </div>
 
-    <down-arrow></down-arrow>
+    <div class="down-arrow secondary-font text-center animated bounceInUp scroll-to animation-delay-5">
+      <div class="down-arrow-wrap">
+        <a go-to container="#character-container"
+          class="scroll-to">
+          <div class="down-arrow-piece down-arrow-left">\</div>
+          <div class="down-arrow-piece down-arrow-right">/</div>
+        </a>
+      </div>
+    </div>
+
 
     <div class="blood-decoration is-first">
       <div class="blood-decoration-item blood-up-01"></div>
@@ -91,7 +100,7 @@
   <script src="/assets/javascripts/shared/filters/clearName.js"></script>
 
   <!-- directives -->
-  <script src="/assets/javascripts/shared/directives/downArrow.js"></script>
+  <script src="/assets/javascripts/shared/directives/goTo.js"></script>
 
   <!-- modules -->
   <script src="/assets/javascripts/modules/characters/characterCtrl.js"></script>
