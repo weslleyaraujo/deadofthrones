@@ -15,7 +15,7 @@
   Character.prototype.update = function () {
     this.isLoading(true);
     setTimeout(function () {
-    this.getCharacter.get().success(this.onSuccess.bind(this));
+      this.getCharacter.get().success(this.onSuccess.bind(this));
     }.bind(this), 300);
   };
 
