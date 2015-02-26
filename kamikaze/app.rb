@@ -1,8 +1,7 @@
 require 'mongo'
 
-connect = Mongo::Connection.new
-db = connect.db('dead_of_thrones')
-collection = db.collection('characters')
-user = collection.find_one()
+mongo_client = Mongo::MongoClient.new("localhost", 27017)
+db = mongo_client.db("dead_of_thrones")
+coll = db.collection("characters")
 
-puts user
+puts coll.find.to_a.sample

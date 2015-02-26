@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.2.0'
 
 gem 'pry'
 gem 'nokogiri'
@@ -12,7 +12,7 @@ gem 'rake'
 gem 'bundler'
 
 # Igor APA
-gem 'gemcutter'
+# gem 'gemcutter'
 gem 'mongo'
 gem 'bson_ext'
 
