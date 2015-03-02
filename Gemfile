@@ -11,11 +11,6 @@ gem 'thin'
 gem 'rake'
 gem 'bundler'
 
-# Igor APA
-# gem 'gemcutter'
-gem 'mongo'
-gem 'bson_ext'
-
 group :development do
   gem 'rerun'
   gem 'compass'

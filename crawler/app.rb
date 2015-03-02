@@ -5,7 +5,7 @@ require 'pry'
 require 'mongoid'
 
 require './crawler/parser.rb'
-require './crawler/character.rb'
+require './models/character.rb'
 
 Mongoid.load!('./config/mongoid.yml')
 
