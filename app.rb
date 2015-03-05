@@ -17,5 +17,5 @@ end
 
 get '/character.json' do
   content_type :json
-  Character.all.sample.to_json
+  Character.where(:quote.ne => '').sample.to_json
 end

@@ -4,7 +4,7 @@
   angular
     .module('dod.shared')
     .constant('config', {
-      characterURL: '/foo'
+      characterURL: '/character.json'
     });
 
 } ());
