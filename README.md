@@ -19,7 +19,7 @@ You can execute our wizard using:
 To populate your database use:
 
 ```
-rake crawler
+rake populate
 ```
 
 To start the development server use:
