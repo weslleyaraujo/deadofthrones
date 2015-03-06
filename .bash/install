@@ -42,11 +42,11 @@ echo ""
 
 echo "Creating database..."
 echo ""
-./create_database
+.bash/create_database
 
 echo "Installing dependencies.."
 echo ""
-./install_deps
+.bash/install_deps
 
 echo ""
 echo "Installation complete!"

@@ -1,6 +1,9 @@
-cd ../
+#!/bin/bash
+
 bundle
 npm install
 bower install
 
-cd -
+cd crawler
+bundle
+cd ..
