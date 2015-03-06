@@ -1,14 +1,15 @@
 require 'open-uri'
 require 'nokogiri'
-require 'pry'
 
 class Info
 
   attr_reader :url, :slug, :get, :xml
 
   def initialize slug
+    config = YAML.load_file('./config/application.yml')
+    @url = config['crawlers']['info']
+
     @slug = slug
-    @url = 'http://gameofthrones.wikia.com/api.php?action=query&prop=revisions&rvprop=content&format=xml&titles='
     @xml = get
   end
 

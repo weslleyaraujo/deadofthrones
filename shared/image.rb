@@ -3,8 +3,10 @@ class Image
   attr_reader :slug, :url, :xml, :file
 
   def initialize slug
+    config = YAML.load_file('./config/application.yml')
+
     @slug = slug
-    @url = 'http://gameofthrones.wikia.com/api.php?action=imageserving&format=xml&wisTitle='
+    @url = config['crawlers']['image']
     @xml = get
     @file = image_url.split('/').last || ''
     save

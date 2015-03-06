@@ -1,2 +1,7 @@
 pages: 20
-char_url: 'http://gameofthrones.wikia.com/index.php?action=ajax&articleId=Status%3A+Dead&method=axGetArticlesPage&rs=CategoryExhibitionAjax&page='
+
+crawlers:
+  character: 'http://gameofthrones.wikia.com/index.php?action=ajax&articleId=Status%3A+Dead&method=axGetArticlesPage&rs=CategoryExhibitionAjax&page='
+  pages: 'http://gameofthrones.wikia.com/wiki/Category:Status:_Dead'
+  image: 'http://gameofthrones.wikia.com/api.php?action=imageserving&format=xml&wisTitle='
+  info: 'http://gameofthrones.wikia.com/api.php?action=query&prop=revisions&rvprop=content&format=xml&titles='
