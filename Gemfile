@@ -7,6 +7,7 @@ gem 'sinatra'
 gem 'thin'
 gem 'rake'
 gem 'bundler'
+gem 'nokogiri'
 
 group :development do
   gem 'pry'

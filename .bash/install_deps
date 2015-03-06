@@ -3,7 +3,3 @@
 bundle
 npm install
 bower install
-
-cd crawler
-bundle
-cd ..

@@ -1,5 +1,5 @@
 task :populate do
-  system "MONGOID_ENV=development bundle exec ruby crawler/app.rb"
+  system "MONGOID_ENV=development bundle exec ruby crawler.rb"
 end
 
 task :develop do

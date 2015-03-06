@@ -3,9 +3,8 @@ require 'nokogiri'
 require 'open-uri'
 require 'pry'
 require 'mongoid'
-require 'rails-settings'
 
-require './crawler/parser.rb'
+require './shared/parser.rb'
 require './models/character.rb'
 
 Mongoid.load!('./config/mongoid.yml')
