@@ -1,0 +1,53 @@
+#!/bin/bash
+
+VERSION="0.0.1"
+
+HAS_MONGO="$(which mongo)"
+HAS_BUNDLE="$(which bundle)"
+HAS_NPM="$(which npm)"
+
+echo ""
+echo "#############################"
+echo "Setup Dead Of Thrones -v ${VERSION}"
+echo "#############################"
+echo ""
+echo ""
+echo "Looking for all dependencies..."
+
+if [ "${HAS_MONGO}" == "" ]; then
+  echo "Could not find any mongo in your machine, you need to install it to proceed."
+  exit 0;
+fi
+
+if [ "${HAS_BUNDLE}" == "" ]; then
+  echo "Could not find gem bundler in your machine, run \"gem install bundler\" to proceed."
+  exit 0;
+fi
+
+if [ "${HAS_NPM}" == "" ]; then
+  echo "Could not find npm in your machine, install it to proceed."
+  exit 0;
+fi
+
+if [ "$(pgrep mongod)" == "" ]; then
+  echo "Could not find any mongo service running in your machine, you need to run start it with \"mongod\"."
+  exit 0;
+fi
+
+echo ""
+echo "We are good to go!"
+echo ""
+echo "Preparing all that you need."
+echo ""
+
+echo "Creating database..."
+echo ""
+./create_database
+
+echo "Installing dependencies.."
+echo ""
+./install_deps
+
+echo ""
+echo "Installation complete!"
+echo "Follow the rules on README.md to continue"

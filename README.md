@@ -2,16 +2,33 @@
 
 [![Join the chat at https://gitter.im/weslleyaraujo/deadofthrones](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/weslleyaraujo/deadofthrones?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Playing around with the large number of characters that our sweet [George R.R Martin]() killed on the
-HBO Serie [Game of Thrones]().
+Playing around with the large number of characters that our sweet [George R.R Martin](http://en.wikipedia.org/wiki/George_R._R._Martin) killed on the
+HBO Serie [Game of Thrones](http://en.wikipedia.org/wiki/Game_of_Thrones).
 
 ## Installing
-To install the app first you must have [MongoDB]() running, and you must create a database named `dead_of_thrones`,
-after that execute the following commands:
+
+You can execute our wizard using:
 
 ```
-bundle install
-MONGOID_ENV=development bundle exec ruby crawler/app.rb
+.bash/install
+```
+
+To populate your database use:
+
+```
+rake crawler
+```
+
+To start the development server use:
+
+```
+rake develop
+```
+
+To start the assets development watcher use:
+
+```
+grunt develop
 ```
 
 Still in development..

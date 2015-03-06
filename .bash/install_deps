@@ -1,0 +1,6 @@
+cd ../
+bundle
+npm install
+bower install
+
+cd -

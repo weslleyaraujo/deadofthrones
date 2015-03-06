@@ -1,18 +1,8 @@
-task :start do
-  system "bundle exec thin start"
-end
-
-task :install do
-  system "bundle"
-  system "npm install"
-  system "bower install"
+task :crawler do
+  "MONGOID_ENV=development bundle exec ruby crawler/app.rb"
 end
 
 task :develop do
-  system "compass:dev"
+  system "grunt compass:dev"
   system "bundle exec rerun thin start"
-end
-
-task :assets do
-  system "grunt develop"
 end
