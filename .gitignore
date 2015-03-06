@@ -40,7 +40,7 @@ build/Release
 node_modules
 
 
-crawler/images/
+public/characters/*
 .DS_Store
 resources/*.psd
 public/assets/css/

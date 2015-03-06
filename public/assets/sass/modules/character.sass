@@ -4,15 +4,17 @@
 // ***
 
 $module-name: 'character'
-$module-font-size: 140px
+$module-font-size: 30px
+$module-title-font-size: 140px
 
 .#{$module-name}
   position: relative
   z-index: $z-index-character
+  font-size: $module-font-size
 
 .#{$module-name}-title
   color: $main-text-color
-  font-size: $module-font-size
+  font-size: $module-title-font-size
   margin: 55px 0 0 0
 
 .#{$module-name}-image-holder
@@ -27,14 +29,14 @@ $module-font-size: 140px
 .#{$module-name}-info
   width: 640px
   margin: 50px 0 0 0
-  height: 445px
+  height: 315px
 
 .#{$module-name}-info-list
   li
     margin: 10px 0
 
 .#{$module-name}-info-item
-  font-size: 28px
+  font-size: 25px
 
 .#{$module-name}-info, .#{$module-name}-image-holder, .#{$module-name}-title
   +opacity(1)
