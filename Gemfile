@@ -8,6 +8,7 @@ gem 'thin'
 gem 'rake'
 gem 'bundler'
 gem 'nokogiri'
+gem 'logging'
 
 group :development do
   gem 'pry'

@@ -15,11 +15,7 @@ class Image
   end
 
   def image_url
-    begin
-      @xml.search('image').attribute('imageserving').value
-    rescue
-      ''
-    end
+    @xml.search('image').attribute('imageserving').value rescue ''
   end
 
   def save
