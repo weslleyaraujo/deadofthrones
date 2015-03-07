@@ -23,7 +23,7 @@
         <img class="introduction-george" src="/assets/images/george.png" alt="">
       </div>
       <div class="introduction-content pull-left text-right animated bounceInRight">
-        <p> <span class="secondary-color">Lorem ipsum dollor sit</span> <br /> ammet game of thrones hbo series fucking awesome website </p>
+        <p> <span class="secondary-color">Dead characters killed by</span> <br /> our sweet George RR Martin! </p>
       </div>
     </div>
 
@@ -54,11 +54,7 @@
 
       <div class="character-wrap" >
         <div class="character-image-holder blood-photo-holder" ng-class="{ isLoading: isLoading }">
-          <img class="character-image"
-            width="200"
-            height="200"
-            ng-src="/characters/{{ character.image }}"
-            alt="">
+          <div class="character-image" style="background-image: url(/characters/{{ character.image }})"></div>
         </div>
         <div class="pull-right character-info" ng-class="{ isLoading: isLoading }" >
           <ul class="clear-list text-right character-info-list">
