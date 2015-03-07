@@ -19,7 +19,13 @@ You can execute our wizard using:
 To populate your database use:
 
 ```
-rake populate
+rake db:fetch
+```
+
+To drop your database (and character images) use:
+
+```
+rake db:drop
 ```
 
 To start the development server use:
