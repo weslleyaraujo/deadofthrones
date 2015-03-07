@@ -30,3 +30,5 @@ service = config['crawlers']['character']
     end
   }
 end
+
+@logger.info("Crawler complete! #{Character.count} characters in your database.")
