@@ -3,14 +3,15 @@ module.exports = function (grunt) {
 
   var tasks = [
     'grunt-contrib-compass',
-    'grunt-contrib-watch'
+    'grunt-contrib-watch',
+    'grunt-contrib-cssmin'
   ],
 
   config = {};
 
   // Compass
   config.compass = {
-    dev: {
+    all: {
       options: {
         specify: [
           'public/assets/sass/main.sass'
@@ -20,20 +21,6 @@ module.exports = function (grunt) {
         imagesDir: 'public/assets/images',
         outputStyle: 'nested',
         environment: 'development',
-        raw: 'http_generated_images_path = \'/assets/images\''
-      }
-    },
-    dist: {
-      options: {
-        specify: [
-          'public/assets/sass/main.sass'
-        ],
-        sassDir: 'public/assets/sass',
-        cssDir: 'public/assets/css',
-        imagesDir: 'dist/assets/images',
-        outputStyle: 'compressed',
-        noLineComments: true,
-        environment: 'production',
         raw: 'http_generated_images_path = \'/assets/images\''
       }
     }
@@ -51,6 +38,26 @@ module.exports = function (grunt) {
     },
   };
 
+  // css min
+  config.cssmin = {
+    options: {
+      keepSpecialComments: 0
+    },
+    target: {
+      files: {
+        'public/assets/css/application.min.css': [
+
+          'public/assets/css/main.css',
+
+          // vendor
+          'public/assets/bower_components/animate.css/animate.css',
+          'public/assets/fonts/armantic/stylesheet.css',
+          'public/assets/fonts/deadfontwalking/stylesheet.css'
+         ]
+      }
+    }
+  };
+
   // Config
   grunt.initConfig(config);
 
@@ -59,7 +66,7 @@ module.exports = function (grunt) {
 
   // Create tasks
   grunt.registerTask('develop', [
-    'compass:dev',
+    'compass:all',
     'watch'
   ]);
 };
