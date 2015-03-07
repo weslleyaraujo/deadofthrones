@@ -1,5 +1,5 @@
 task :develop do
-  system "grunt compass:dev"
+  system "grunt compass:all"
   system "bundle exec rerun thin start"
 end
 

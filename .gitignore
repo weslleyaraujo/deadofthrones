@@ -45,4 +45,4 @@ public/assets/css
 public/assets/bower_components
 public/characters/*
 !public/characters/.gitkeep
-character.example.json
+public/assets/javascripts/*.min.js

@@ -4,7 +4,8 @@ module.exports = function (grunt) {
   var tasks = [
     'grunt-contrib-compass',
     'grunt-contrib-watch',
-    'grunt-contrib-cssmin'
+    'grunt-contrib-cssmin',
+    'grunt-contrib-uglify'
   ],
 
   config = {};
@@ -55,6 +56,28 @@ module.exports = function (grunt) {
           'public/assets/fonts/deadfontwalking/stylesheet.css'
          ]
       }
+    }
+  };
+
+  // css uglify
+  config.uglify = {
+    all: {
+      files: {
+        'public/assets/javascripts/application.min.js': [
+            // vendor
+            'public/assets/bower_components/jquery/dist/jquery.js',
+            'public/assets/bower_components/angular/angular.js',
+
+            'public/assets/javascripts/boot.js',
+            'public/assets/javascripts/config.js',
+
+            'public/assets/javascripts/shared/services/*.js',
+            'public/assets/javascripts/shared/filters/*.js',
+            'public/assets/javascripts/shared/directives/*.js',
+
+            'public/assets/javascripts/modules/**/*.js'
+          ]
+       }
     }
   };
 
