@@ -43,5 +43,6 @@ node_modules
 resources/*.psd
 public/assets/css
 public/assets/bower_components
-public/characters/*.{jpg,png}
+public/characters/*
+!public/characters/.gitkeep
 character.example.json
