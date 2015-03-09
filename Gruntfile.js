@@ -59,8 +59,11 @@ module.exports = function (grunt) {
     }
   };
 
-  // css uglify
+  // js uglify
   config.uglify = {
+    options: {
+      mangle: false // fix angular js minify
+    },
     all: {
       files: {
         'public/assets/javascripts/application.min.js': [
@@ -91,5 +94,11 @@ module.exports = function (grunt) {
   grunt.registerTask('develop', [
     'compass:all',
     'watch'
+  ]);
+
+  grunt.registerTask('build', [
+    'compass:all',
+    'cssmin',
+    'uglify:all'
   ]);
 };
