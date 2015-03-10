@@ -4,7 +4,7 @@ task :develop do
 end
 
 task :start do
-  system "thin start"
+  system "bundle exec thin start"
 end
 
 namespace :db do
