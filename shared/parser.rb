@@ -1,4 +1,3 @@
-require 'pry'
 require 'mongoid'
 
 require './shared/info.rb'

@@ -17,5 +17,5 @@ end
 
 get '/character.json' do
   content_type :json
-  Character.where(:quote.ne => '').sample.to_json
+  Character.random
 end

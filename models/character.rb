@@ -11,4 +11,10 @@ class Character
   field :image,   type: String
   field :aka,     type: String
   field :place,   type: String
+
+  class << self
+    def random
+      self.where(:quote.ne => '').sample.to_json
+    end
+  end
 end
