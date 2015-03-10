@@ -1,2 +1,2 @@
-web: bundle exec thin start -d -e production
+web: bundle exec thin start -p $PORT -e production
 
