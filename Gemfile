@@ -9,6 +9,7 @@ gem 'rake'
 gem 'bundler'
 gem 'nokogiri'
 gem 'logging'
+gem 'compass'
 
 group :development do
   gem 'pry'
