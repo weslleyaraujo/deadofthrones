@@ -96,7 +96,7 @@ module.exports = function (grunt) {
     'watch'
   ]);
 
-  grunt.registerTask('build', [
+  grunt.registerTask('heroku:production', [
     'compass:all',
     'cssmin',
     'uglify:all'
