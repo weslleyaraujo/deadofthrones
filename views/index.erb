@@ -58,7 +58,7 @@
 
       <div class="character-wrap" >
         <div class="character-image-holder blood-photo-holder" ng-class="{ isLoading: isLoading }">
-          <div class="character-image" style="background-image: url(/characters/{{ character.image }})"></div>
+          <div class="character-image" style="background-image: url({{ character.image ? ('/characters/' + character.image) : 'http://placehold.it/200x200' }})"></div>
         </div>
         <div class="pull-right character-info" ng-class="{ isLoading: isLoading }" >
           <ul class="clear-list text-right character-info-list">
