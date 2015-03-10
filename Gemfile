@@ -14,5 +14,8 @@ gem 'compass'
 group :development do
   gem 'pry'
   gem 'rerun'
-  gem 'compass'
+end
+
+group :production do
+  gem 'thin'  
 end
