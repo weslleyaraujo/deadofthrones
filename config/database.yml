@@ -8,3 +8,6 @@ production:
   sessions:
     default:
       uri: ''
+      options:
+        skip_version_check: true
+        safe: true
