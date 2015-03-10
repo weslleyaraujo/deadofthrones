@@ -3,10 +3,6 @@ task :develop do
   system "bundle exec rerun thin start"
 end
 
-task :start do
-  system "bundle exec thin start"
-end
-
 namespace :db do
   task :fetch do
     system "MONGOID_ENV=development bundle exec ruby crawler.rb"

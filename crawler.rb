@@ -8,7 +8,7 @@ require './shared/logger.rb'
 require './shared/pages.rb'
 require './models/character.rb'
 
-Mongoid.load!('./config/mongoid.yml')
+Mongoid.load!('./config/database.yml')
 config = YAML.load_file('./config/application.yml')
 
 pages = Pages.new
