@@ -29,7 +29,7 @@ class Image
   end
 
   def strip_char file
-    file.gsub(/[%]/, '').strip
+    file.gsub(/[%]/, '').strip rescue ''
   end
 
   def as_json
