@@ -1,2 +1,2 @@
-web: rake start
+web: thin start
 
