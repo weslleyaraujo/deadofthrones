@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/weslleyaraujo/deadofthrones",
   "devDependencies": {
+    "bower": "^1.3.12",
     "grunt": "^0.4.5",
     "grunt-contrib-compass": "^1.0.1",
     "grunt-contrib-cssmin": "^0.12.2",
