@@ -8,7 +8,7 @@ class Image
     @slug = slug
     @url = config['crawlers']['image']
     @xml = get
-    @file = image_url.split('/').last || ''
+    @file = strip_char(image_url.split('/').last) || ''
     save
   end
 
@@ -28,9 +28,13 @@ class Image
     end
   end
 
+  def strip_char file
+    file.gsub(/[%]/, '').strip
+  end
+
   def as_json
     {
-      :image => @file.strip
+      :image => @file
     }
   end
 end
