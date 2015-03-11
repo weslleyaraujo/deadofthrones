@@ -7,7 +7,4 @@ development:
 production:
   sessions:
     default:
-      uri: ''
-      options:
-        skip_version_check: true
-        safe: true
+      uri: <%= ENV['MONGOLAB_URI'] %>

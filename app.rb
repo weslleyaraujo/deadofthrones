@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'sinatra'
+require 'yaml'
 require './models/character.rb'
 
 # Set Sinatra variables
