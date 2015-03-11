@@ -9,7 +9,7 @@ set :root, File.dirname(__FILE__)
 set :views, 'views'
 set :public_folder, 'public'
 
-Mongoid.load!('./config/database.yml')
+Mongoid.load!('./config/mongoid.yml')
 
 # Application routes
 get '/' do
