@@ -5,6 +5,7 @@ VERSION="0.0.1"
 HAS_MONGO="$(which mongo)"
 HAS_BUNDLE="$(which bundle)"
 HAS_NPM="$(which npm)"
+HAS_BOWER="$(which bower)"
 
 echo ""
 echo "#############################"
@@ -26,6 +27,11 @@ fi
 
 if [ "${HAS_NPM}" == "" ]; then
   echo "Could not find npm in your machine, install it to proceed."
+  exit 0;
+fi
+
+if [ "${HAS_BOWER}" == "" ]; then
+  echo "Could not find bower in your machine, install it to proceed."
   exit 0;
 fi
 
