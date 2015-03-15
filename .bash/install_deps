@@ -2,4 +2,4 @@
 
 bundle
 npm install
-bower install
+bower install --allow-root
