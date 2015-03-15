@@ -1,21 +1,20 @@
 source 'https://rubygems.org'
 ruby '2.2.0'
 
-gem 'mongoid'
-
-gem 'sinatra'
-gem 'thin'
-gem 'rake'
 gem 'bundler'
-gem 'nokogiri'
-gem 'logging'
 gem 'compass'
+gem 'logging'
+gem 'mongoid'
+gem 'nokogiri'
+gem 'rake'
+gem 'sinatra'
 
 group :development do
   gem 'pry'
   gem 'rerun'
+  gem 'thin'
 end
 
 group :production do
-  gem 'thin'  
+  gem 'unicorn'  
 end
