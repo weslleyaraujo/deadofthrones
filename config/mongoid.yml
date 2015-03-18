@@ -7,4 +7,6 @@ development:
 production:
   sessions:
     default:
-      uri: <%= ENV['MONGOLAB_URI'] %>
+      database: dead_of_thrones
+      hosts:
+        - localhost:27017
