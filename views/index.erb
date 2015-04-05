@@ -57,11 +57,14 @@
       </div>
 
       <div class="character-wrap" >
-        <div class="character-image-holder blood-photo-holder" ng-class="{ isLoading: isLoading }">
-          <div class="character-image" style="background-image: url({{ character.image ? ('/characters/' + character.image) : 'http://placehold.it/200x200' }})"></div>
+        <div class="character-image-holder blood-photo-holder" ng-class="{ isLoading: isLoading, 'is-hidden': !character.image }">
+          <a target="_blank" href="{{ character.url }}">
+            <div class="character-image" style="background-image: url({{ ('/characters/' + character.image) }})"></div>
+          </a>
         </div>
-        <div class="pull-right character-info" ng-class="{ isLoading: isLoading }" >
-          <ul class="clear-list text-right character-info-list">
+        <div class="pull-right character-info" ng-class="{ isLoading: isLoading, 'is-full-size': !character.image }" >
+          <ul class="clear-list character-info-list" ng-class="{ 'text-right': character.image }">
+
             <li>"{{ character.quote | limitTo:120 }}"</li>
             <li ng-show="!!character.place" class="character-info-item"><i class="icons-castle"></i> {{ character.place }}</li>
             <li ng-show="!!character.death" class="character-info-item"><i class="icons-cross"></i> {{ character.death }}</li>
