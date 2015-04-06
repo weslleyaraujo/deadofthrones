@@ -83,14 +83,24 @@
 
     <div class="wrap">
       <p class="pull-left">created with ❤ by a huge fan from the game of thrones series!</p>
-      <p class="pull-right">
-        <a href="https://twitter.com/_weslleyaraujo"
-          target="_blank"
-          class="twitter-user">@<span>_</span>weslleyaraujo</a>
-      </p>
+      <ul class="clear-list social pull-right">
+        <li class="inline-block">
+          <a href="https://twitter.com/_weslleyaraujo" target="_blank" title="Follow me on Twitter">
+            <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
+          </a>
+        </li>
+        <li class="inline-block">
+          <a href="https://github.com/weslleyaraujo/deadofthrones/" target="_blank" title="Fork me on Github">
+            <svg class="icon icon-github4"><use xlink:href="#icon-github4"></use></svg><span class="mls"> 
+          </a>
+        </li>
+      </ul>
     </div>
-    {{ onClick }}
   </footer>
+
+
+  <% # svg %>
+  <%= erb 'shared/_svg'.to_sym %>
 
   <% if ENV['RACK_ENV'] == 'development' %>
     <script src="/assets/bower_components/jquery/dist/jquery.js"></script>
