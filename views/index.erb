@@ -48,15 +48,15 @@
     </div>
   </div>
 
-  <div class="full-container is-second is-character"
+  <div class="full-container is-second is-character is-table"
     id="character-container"
     ng-controller="dod.characters.controllers.Character as characterCtrl">
-    <div class="character wrap">
-      <div class="text-center">
+    <div class="character">
+      <div class="text-center wrap">
         <h2 class="character-title primary-font" ng-class="{ isLoading: isLoading }" >{{ character.title | clearName }}</h2>
       </div>
 
-      <div class="character-wrap" >
+      <div class="character-wrap wrap" >
         <div class="character-image-holder blood-photo-holder" ng-class="{ isLoading: isLoading, 'is-hidden': !character.image }">
           <a target="_blank" href="{{ character.url }}">
             <div class="character-image" style="background-image: url({{ ('/characters/' + character.image) }})"></div>

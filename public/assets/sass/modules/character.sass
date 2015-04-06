@@ -8,6 +8,8 @@ $module-font-size: 30px
 $module-title-font-size: 140px
 
 .#{$module-name}
+  display: table-cell
+  vertical-align: middle
   position: relative
   z-index: $z-index-character
   font-size: $module-font-size
@@ -59,3 +61,6 @@ $module-title-font-size: 140px
   background-color: $secondary-color
   background-repeat: no-repeat
   +border-radius(50%)
+
+.#{$module-name}-wrap
+  position: relative
