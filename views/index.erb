@@ -66,9 +66,9 @@
           <ul class="clear-list character-info-list" ng-class="{ 'text-right': character.image }">
 
             <li>"{{ character.quote | limitTo:120 }}"</li>
-            <li ng-show="!!character.place" class="character-info-item"><i class="icons-castle"></i> {{ character.place }}</li>
-            <li ng-show="!!character.death" class="character-info-item"><i class="icons-cross"></i> {{ character.death }}</li>
-            <li ng-show="!!character.url" class="character-info-item"><i class="icons-sword"></i><a href="{{ character.url }}"> See More</a></li>
+            <li ng-show="!!character.place" class="character-info-item"><i class="icons-castle character-info-icon"></i> {{ character.place }}</li>
+            <li ng-show="!!character.death" class="character-info-item"><i class="icons-cross character-info-icon"></i> {{ character.death }}</li>
+            <li ng-show="!!character.url" class="character-info-item"><i class="icons-sword character-info-icon"></i><a href="{{ character.url }}"> See More</a></li>
         </div>
         <div class="text-center clearfix">
           <a class="btn" ng-click="characterCtrl.update()">SHOW ME ANOTHER DEAD!</a>

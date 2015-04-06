@@ -21,7 +21,6 @@ $module-name: 'btn'
   font-size: $btn-font-size
   +border-radius(8px)
   +inline-block
-  +box-shadow(-4px 4px $btn-secondary-color)
   +transition(0.3s)
   &:hover,
   &:focus,
@@ -29,18 +28,12 @@ $module-name: 'btn'
     color: #FFF
     background-color: $btn-hover-background-color
     text-decoration: none
-  &:active,
-  &.active
-    outline: 0
-    background-image: none
-    +box-shadow(inset 0 3px 5px rgba(0, 0, 0, 0.125))
   &.disabled,
   &[disabled],
   fieldset[disabled] &
     pointer-events: none
     // Future-proof disabling of clicks
     +opacity(0.65)
-    +box-shadow(none)
 
 // Link buttons
 // -------------------------
