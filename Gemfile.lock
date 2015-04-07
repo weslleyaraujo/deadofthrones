@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/roots/capistrano-grunt.git
+  revision: bf87034ad9345d8653070bdcab62e8660593787c
+  specs:
+    capistrano-grunt (0.0.4)
+      capistrano (>= 3.0.0.pre)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -118,6 +125,7 @@ PLATFORMS
 DEPENDENCIES
   bundler
   capistrano (~> 3.3.0)
+  capistrano-grunt!
   capistrano-npm
   compass
   logging
