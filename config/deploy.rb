@@ -2,7 +2,7 @@
 lock '3.3.5'
 
 set :application, 'deadofthrones'
-set :repo_url, 'github.com/weslleyaraujo/deadofthrones.git'
+set :repo_url, 'https://github.com/weslleyaraujo/deadofthrones.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
@@ -20,7 +20,7 @@ set :deploy_to, '/home/deadofthrones'
 # set :log_level, :debug
 
 # Default value for :pty is false
-# set :pty, true
+set :pty, true
 
 # Default value for :linked_files is []
 # set :linked_files, fetch(:linked_files, []).push('config/database.yml')
@@ -32,9 +32,17 @@ set :deploy_to, '/home/deadofthrones'
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
+set :keep_releases, 2
 
 namespace :deploy do
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      # Your restart mechanism here, for example:
+      execute 'echo yea'
+    end
+  end
+
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
