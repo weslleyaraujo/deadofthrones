@@ -22,6 +22,20 @@
   Character.prototype.onSuccess = function (data) {
     this.isLoading(false);
     this.$scope.character = data;
+
+    if (data.image) {
+      this.loadImage(data.image);
+    }
+  };
+
+  Character.prototype.loadImage = function (src) {
+    var image = document.createElement('img');
+    image.src = '/characters/' + src;
+    image.onload = this.onImageLoad.bind(this);
+  };
+
+  Character.prototype.onImageLoad = function () {
+    console.log('image onload');
   };
 
   Character.$inject = ['$scope', 'dod.shared.services.getCharacter'];
