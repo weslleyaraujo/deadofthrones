@@ -35,24 +35,28 @@ set :pty, true
 set :keep_releases, 2
 
 # grunt
-set :grunt_tasks, 'build'
+# set :grunt_tasks, 'build'
+#
+set :local_app_path, Pathname.new('~/workspace/deadofthrones/')
+set :theme_path, Pathname.new('~/workspace/deadofthrones/public/assets/')
+set :local_theme_path, fetch(:local_app_path).join(fetch(:theme_path))
 
 namespace :deploy do
-  desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      execute 'echo yea'
+
+  task :compile_assets do
+    run_locally do
+      within fetch(:local_app_path) do
+        execute :grunt, :build
+      end
     end
   end
 
 
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      within release_path do
-        execute :rake, 'db:fetch'
-      end
+  task :copy_assets do
+    # invoke 'deploy:compile_assets'
+
+    on roles(:web) do
+      upload! '/Users/weslley.araujo/workspace/deadofthrones/public/assets/css/application.min.css', "#{release_path}/public/assets/", recursive: true
     end
   end
 
