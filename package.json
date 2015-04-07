@@ -4,7 +4,7 @@
   "description": "Playing around with the large number of characters that our sweet George R.R Martin killed on the HBO Serie Game of Thrones.",
   "main": "index.js",
   "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install && ./node_modules/grunt-cli/bin/grunt build"
+    "postinstall": "./node_modules/bower/bin/bower install -s && ./node_modules/grunt-cli/bin/grunt build"
   },
   "repository": {
     "type": "git",

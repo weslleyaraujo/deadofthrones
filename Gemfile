@@ -9,6 +9,7 @@ gem 'nokogiri'
 gem 'rake'
 gem 'sinatra'
 gem 'capistrano', '~> 3.3.0'
+gem 'capistrano-npm'
 
 group :development do
   gem 'pry'
