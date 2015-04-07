@@ -10,6 +10,7 @@ gem 'rake'
 gem 'sinatra'
 gem 'capistrano', '~> 3.3.0'
 gem 'capistrano-npm'
+gem 'capistrano-grunt', github: 'roots/capistrano-grunt'
 
 group :development do
   gem 'pry'

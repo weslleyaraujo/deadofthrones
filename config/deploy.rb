@@ -34,6 +34,9 @@ set :pty, true
 # Default value for keep_releases is 5
 set :keep_releases, 2
 
+# grunt
+set :grunt_tasks, 'build'
+
 namespace :deploy do
   desc 'Restart application'
   task :restart do
