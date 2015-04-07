@@ -4,17 +4,17 @@
 // ***
 
 $module-name: 'character'
-$module-font-size: 30px
-$module-title-font-size: 140px
 
 .#{$module-name}
+  display: table-cell
+  vertical-align: middle
   position: relative
   z-index: $z-index-character
-  font-size: $module-font-size
+  font-size: $character-font-size
 
 .#{$module-name}-title
   color: $main-text-color
-  font-size: $module-title-font-size
+  font-size: $character-title-font-size
   margin: 55px 0 0 0
 
 .#{$module-name}-image-holder
@@ -29,7 +29,11 @@ $module-title-font-size: 140px
 .#{$module-name}-info
   width: 640px
   margin: 50px 0 0 0
-  height: 315px
+  height: 300px
+  &.is-full-size
+    margin: 0 auto
+    width: 640px
+    float: none
 
 .#{$module-name}-info-list
   li
@@ -55,3 +59,9 @@ $module-title-font-size: 140px
   background-color: $secondary-color
   background-repeat: no-repeat
   +border-radius(50%)
+
+.#{$module-name}-wrap
+  position: relative
+
+.#{$module-name}-info-icon
+  margin-right: 10px

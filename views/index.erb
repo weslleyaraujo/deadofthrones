@@ -48,24 +48,27 @@
     </div>
   </div>
 
-  <div class="full-container is-second is-character"
+  <div class="full-container is-second is-character is-table"
     id="character-container"
     ng-controller="dod.characters.controllers.Character as characterCtrl">
-    <div class="character wrap">
-      <div class="text-center">
-        <h2 class="character-title primary-font" ng-class="{ isLoading: isLoading }" >{{ character.title | clearName }}</h2>
+    <div class="character">
+      <div ng-cloak class="text-center wrap">
+        <h2 ng-cloak class="character-title primary-font" ng-class="{ isLoading: isLoading }" >{{ character.title | clearName }}</h2>
       </div>
 
-      <div class="character-wrap" >
-        <div class="character-image-holder blood-photo-holder" ng-class="{ isLoading: isLoading }">
-          <div class="character-image" style="background-image: url({{ character.image ? ('/characters/' + character.image) : 'http://placehold.it/200x200' }})"></div>
+      <div class="character-wrap wrap" >
+        <div class="character-image-holder blood-photo-holder" ng-class="{ isLoading: isLoading, 'is-hidden': !character.image }">
+          <a target="_blank" href="{{ character.url }}">
+            <div class="character-image" style="background-image: url({{ ('/characters/' + character.image) }})"></div>
+          </a>
         </div>
-        <div class="pull-right character-info" ng-class="{ isLoading: isLoading }" >
-          <ul class="clear-list text-right character-info-list">
-            <li>"{{ character.quote | limitTo:120 }}"</li>
-            <li ng-show="!!character.place" class="character-info-item"><i class="icons-castle"></i> {{ character.place }}</li>
-            <li ng-show="!!character.death" class="character-info-item"><i class="icons-cross"></i> {{ character.death }}</li>
-            <li ng-show="!!character.url" class="character-info-item"><i class="icons-sword"></i><a href="{{ character.url }}"> See More</a></li>
+        <div class="pull-right character-info" ng-class="{ isLoading: isLoading, 'is-full-size': !character.image }" >
+          <ul class="clear-list character-info-list" ng-class="{ 'text-right': character.image }">
+
+            <li ng-cloak >"{{ character.quote | limitTo:120 }}"</li>
+            <li ng-cloak ng-show="!!character.place" class="character-info-item"><i class="icons-castle character-info-icon"></i> {{ character.place }}</li>
+            <li ng-cloak ng-show="!!character.death" class="character-info-item"><i class="icons-cross character-info-icon"></i> {{ character.death }}</li>
+            <li ng-cloak ng-show="!!character.url" class="character-info-item"><i class="icons-sword character-info-icon"></i><a target="_blank" href="{{ character.url }}"> See More</a></li>
         </div>
         <div class="text-center clearfix">
           <a class="btn" ng-click="characterCtrl.update()">SHOW ME ANOTHER DEAD!</a>
@@ -80,12 +83,24 @@
 
     <div class="wrap">
       <p class="pull-left">created with ❤ by a huge fan from the game of thrones series!</p>
-      <p class="pull-right">
-        <a href="#">@ _weslleyaraujo</a>
-      </p>
+      <ul class="clear-list social pull-right">
+        <li class="inline-block">
+          <a href="https://twitter.com/_weslleyaraujo" target="_blank" title="Follow me on Twitter">
+            <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
+          </a>
+        </li>
+        <li class="inline-block">
+          <a href="https://github.com/weslleyaraujo/deadofthrones/" target="_blank" title="Fork me on Github">
+            <svg class="icon icon-github4"><use xlink:href="#icon-github4"></use></svg><span class="mls"> 
+          </a>
+        </li>
+      </ul>
     </div>
-    {{ onClick }}
   </footer>
+
+
+  <% # svg %>
+  <%= erb 'shared/_svg'.to_sym %>
 
   <% if ENV['RACK_ENV'] == 'development' %>
     <script src="/assets/bower_components/jquery/dist/jquery.js"></script>

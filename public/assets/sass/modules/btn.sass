@@ -6,10 +6,6 @@
 // --------------------------------------------------
 
 $module-name: 'btn'
-$module-primary-color: #98FFA2
-$module-secondary-color: #03A913
-$module-hover-background-color: #67C571
-$module-font-size: 40px
 
 .#{$module-name}
   text-align: center
@@ -19,32 +15,25 @@ $module-font-size: 40px
   border: 1px solid transparent
   white-space: nowrap
   padding: 10px 80px
-  background-color: $module-primary-color
+  background-color: $btn-primary-color
   margin: 10px 0 30px 0
-  color: $module-secondary-color
-  font-size: $module-font-size
+  color: $btn-secondary-color
+  font-size: $btn-font-size
   +border-radius(8px)
   +inline-block
-  +box-shadow(-4px 4px $module-secondary-color)
   +transition(0.3s)
   &:hover,
   &:focus,
   &.focus
     color: #FFF
-    background-color: $module-hover-background-color
+    background-color: $btn-hover-background-color
     text-decoration: none
-  &:active,
-  &.active
-    outline: 0
-    background-image: none
-    +box-shadow(inset 0 3px 5px rgba(0, 0, 0, 0.125))
   &.disabled,
   &[disabled],
   fieldset[disabled] &
     pointer-events: none
     // Future-proof disabling of clicks
     +opacity(0.65)
-    +box-shadow(none)
 
 // Link buttons
 // -------------------------

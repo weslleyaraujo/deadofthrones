@@ -1,0 +1,20 @@
+// *****
+// Social
+//
+// ***
+
+$module-name: 'social'
+
+.#{$module-name}
+  position: relative
+  z-index: $z-index-social
+  margin: 28px 0 0 0
+  svg
+    width: $social-svg-ratio
+    height: $social-svg-ratio
+    fill: $main-text-color
+    +transition(0.3s)
+    &:hover
+      fill: $secondary-color
+  li
+    margin: 0 10px

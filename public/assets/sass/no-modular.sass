@@ -56,3 +56,11 @@
 // infinite
 .animation-delay-1
   @include experimental(animation-delay, 1s)
+
+// hidden
+.is-hidden
+  display: none
+
+// hide angular "{{}}"
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak
+  display: none !important
