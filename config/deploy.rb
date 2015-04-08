@@ -20,7 +20,7 @@ set :deploy_to, '/home/deadofthrones'
 # set :log_level, :debug
 
 # Default value for :pty is false
-# set :pty, true
+set :pty, true
 
 # Default value for :linked_files is []
 # set :linked_files, fetch(:linked_files, []).push('config/database.yml')
@@ -33,10 +33,6 @@ set :deploy_to, '/home/deadofthrones'
 
 # Default value for keep_releases is 5
 set :keep_releases, 2
-
-# grunt
-# set :grunt_tasks, 'build'
-#
 
 namespace :deploy do
 
@@ -55,5 +51,10 @@ namespace :deploy do
       upload! "./public/assets/javascripts/application.min.js", "#{release_path}/public/assets/javascripts/"
     end
   end
+
+
+  after 'deploy:publishing', 'deploy:compile_assets'
+  after 'deploy:publishing', 'deploy:copy_assets'
+  # after 'deploy:publishing', 'nginx:restart', 'unicorn:restart'
 
 end
