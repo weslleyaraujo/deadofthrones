@@ -46,4 +46,3 @@ public/assets/bower_components
 public/characters/*
 !public/characters/.gitkeep
 public/assets/javascripts/*.min.js
-.capistrano/
