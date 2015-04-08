@@ -37,9 +37,6 @@ set :keep_releases, 2
 # grunt
 # set :grunt_tasks, 'build'
 #
-set :local_app_path, Pathname.new('~/workspace/deadofthrones/')
-set :theme_path, Pathname.new('~/workspace/deadofthrones/public/assets/')
-set :local_theme_path, fetch(:local_app_path).join(fetch(:theme_path))
 
 namespace :deploy do
 
@@ -54,9 +51,9 @@ namespace :deploy do
 
   task :copy_assets do
     # invoke 'deploy:compile_assets'
-
+    #
     on roles(:web) do
-      upload! '/Users/weslley.araujo/workspace/deadofthrones/public/assets/css/application.min.css', "#{release_path}/public/assets/", recursive: true
+      upload! "#{File.expand_path(__FILE__)}/public/assets/css/application.min.css", "#{release_path}/public/assets/", recursive: true
     end
   end
 

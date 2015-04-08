@@ -41,7 +41,7 @@ node_modules
 
 .DS_Store
 resources/*.psd
-public/assets/css
+public/assets/css/*.css
 public/assets/bower_components
 public/characters/*
 !public/characters/.gitkeep
