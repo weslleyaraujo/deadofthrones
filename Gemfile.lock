@@ -1,10 +1,3 @@
-GIT
-  remote: git://github.com/roots/capistrano-grunt.git
-  revision: bf87034ad9345d8653070bdcab62e8660593787c
-  specs:
-    capistrano-grunt (0.0.4)
-      capistrano (>= 3.0.0.pre)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -24,8 +17,6 @@ GEM
       i18n
       rake (>= 10.0.0)
       sshkit (~> 1.3)
-    capistrano-npm (1.0.1)
-      capistrano (>= 3.0.0)
     capistrano-stats (1.1.1)
     celluloid (0.16.0)
       timers (~> 4.0.0)
@@ -125,8 +116,6 @@ PLATFORMS
 DEPENDENCIES
   bundler
   capistrano (~> 3.3.0)
-  capistrano-grunt!
-  capistrano-npm
   compass
   logging
   mongoid

@@ -20,7 +20,7 @@ set :deploy_to, '/home/deadofthrones'
 # set :log_level, :debug
 
 # Default value for :pty is false
-set :pty, true
+# set :pty, true
 
 # Default value for :linked_files is []
 # set :linked_files, fetch(:linked_files, []).push('config/database.yml')
@@ -43,17 +43,16 @@ namespace :deploy do
   task :compile_assets do
     run_locally do
       within fetch(:local_app_path) do
-        execute :grunt, :build
+        system("grunt build")
       end
     end
   end
 
 
   task :copy_assets do
-    # invoke 'deploy:compile_assets'
-    #
     on roles(:web) do
-      upload! "#{File.expand_path(__FILE__)}/public/assets/css/application.min.css", "#{release_path}/public/assets/", recursive: true
+      upload! "./public/assets/css/application.min.css", "#{release_path}/public/assets/css"
+      upload! "./public/assets/javascripts/application.min.js", "#{release_path}/public/assets/javascripts/"
     end
   end
 
