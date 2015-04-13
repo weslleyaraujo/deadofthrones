@@ -59,8 +59,8 @@
       <div class="character-wrap wrap" >
         <div class="character-image-holder blood-photo-holder" ng-class="{ isLoading: isLoading, 'is-hidden': !character.image }">
           <a target="_blank" href="{{ character.url }}">
-            <div class="character-image text-center" style="background-image: url({{ ('/characters/' + character.image) }})">
-              <div class="character-image-loader" ng-class="{ 'is-hidden': !isLoading }">
+            <div class="character-image text-center animated" character-image="{{ character.image }}" >
+              <div class="character-image-loader animated" ng-class="{ fadeOut: isLoading }">
                 <%= erb 'shared/_loader'.to_sym %>
               </div>
             </div>
@@ -120,6 +120,7 @@
 
     <!-- directives -->
     <script src="/assets/javascripts/shared/directives/goTo.js"></script>
+    <script src="/assets/javascripts/shared/directives/characterImage.js"></script>
 
     <!-- modules -->
     <script src="/assets/javascripts/modules/characters/characterCtrl.js"></script>
