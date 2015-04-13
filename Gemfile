@@ -9,12 +9,10 @@ gem 'nokogiri'
 gem 'rake'
 gem 'sinatra'
 
-
 group :development do
   gem 'pry'
   gem 'rerun'
   gem 'thin'
-  gem 'capistrano', '~> 3.3.0'
 end
 
 group :production do
