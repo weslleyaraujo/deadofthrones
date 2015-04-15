@@ -27,6 +27,11 @@
 
 </head>
 <body ng-app="dod">
+
+
+  <% # svg %>
+  <%= erb 'shared/_svg'.to_sym %>
+
   <div class="full-container is-first">
     <header class="header text-center animated bounceInDown">
       <h1>DEAD OF THRONES</h1>
@@ -116,9 +121,6 @@
     </div>
   </footer>
 
-
-  <% # svg %>
-  <%= erb 'shared/_svg'.to_sym %>
 
   <% if ENV['RACK_ENV'] == 'development' %>
     <script src="/assets/bower_components/jquery/dist/jquery.js"></script>
