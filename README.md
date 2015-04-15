@@ -57,5 +57,5 @@ grunt develop
 ## Contributors
 
 * [Evgeny Yakovlev](http://jackovlevdesignart.blogspot.com.br/) - Creator of the George RR Martin cartoon.
-* @igorapa
-* @mauriciosoares
+* [Igor Apa](github.com/igorapa)
+* [Mauricio Soares](https://github.com/mauriciosoares)
