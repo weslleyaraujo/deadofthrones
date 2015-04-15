@@ -10,12 +10,13 @@ Repo for the website: [Dead of Thrones](http://deadofthrones.com)
 Playing around with the large number of characters that our sweet [George R.R Martin](http://en.wikipedia.org/wiki/George_R._R._Martin) killed on the
 HBO Serie [Game of Thrones](http://en.wikipedia.org/wiki/Game_of_Thrones).
 
-As a huge GOT fan I decided to create this small website showing a little information of those dead characters 😢
+As a huge GOT fan I decided to create this small website showing a little information of those dead characters 😢  
+
 Thanks to the [Game Of Thrones Wikia](gameofthrones.wikia.com)!
 
 ## Installing
 
-You can execute our wizard using:
+You can execute a wizard tool using:
 
 ```
 .bash/install
