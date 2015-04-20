@@ -67,3 +67,12 @@ $module-name: 'character'
 
 .#{$module-name}-info-icon
   margin-right: 10px
+
+.#{$module-name}-link a:hover
+  text-decoration: underline
+
+.#{$module-name}-link i
+  +transition(all .1s ease-out)
+
+.#{$module-name}-link a:hover i
+  +transform(rotate(90deg))

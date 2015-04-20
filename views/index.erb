@@ -89,8 +89,8 @@
             <li ng-cloak ng-show="!!character.death" class="character-info-item">
               <i class="icons-cross character-info-icon"></i> {{ character.death }}
             </li>
-            <li ng-cloak ng-show="!!character.url" class="character-info-item">
-              <i class="icons-sword character-info-icon"></i><a target="_blank" href="{{ character.url }}"> See More</a>
+            <li ng-cloak ng-show="!!character.url" class="character-info-item character-link">
+              <a target="_blank" href="{{ character.url }}"><i class="icons-sword character-info-icon"></i> See More</a>
             </li>
         </div>
         <div class="text-center clearfix">
