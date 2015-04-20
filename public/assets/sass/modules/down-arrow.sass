@@ -13,15 +13,23 @@ $module-name: 'down-arrow'
   z-index: $z-index-down-arrow
   a
     cursor: pointer
+    display: block
+    +animation(arrowDown 1.25s 2s ease infinite alternate running)
+  a.clicked
+    +animation(none)
+  a:hover .#{$module-name}-piece
+    color: $secondary-color
 
 .#{$module-name}-wrap
   width: 170px
   height: 150px
   margin: 0 auto
   position: relative
+  +transition(transform .3s ease)
 
 .#{$module-name}-piece
   position: absolute
+  +transition(color .3s ease)
 
 .#{$module-name}-left
   +transform(rotate(-47deg))
@@ -29,3 +37,11 @@ $module-name: 'down-arrow'
 .#{$module-name}-right
   left: 70px
   +transform(rotate(33deg))
+
++keyframes(arrowDown)
+  from
+    +transform(translateY(0px))
+    opacity: 1
+  to
+    +transform(translateY(20px))
+    opacity: .7
