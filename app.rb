@@ -17,6 +17,8 @@ assets {
 
   serve '/assets/javascripts', from: 'public/assets/javascripts/'
   serve '/assets/css', from: 'public/assets/css/'
+  serve '/assets/bower_components', from: 'public/assets/bower_components/'
+  serve '/assets/fonts', from: 'public/assets/fonts/'
 
   js :application, '/assets/javascripts/application.js', [
     '/assets/bower_components/jquery/dist/jquery.js',
