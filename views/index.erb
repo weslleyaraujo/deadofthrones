@@ -13,17 +13,7 @@
   <meta property="og:site_name" content="Dead of Thrones"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <% if ENV['RACK_ENV'] == 'development' %>
-    <!-- deps -->
-    <link rel="stylesheet" href="/assets/bower_components/animate.css/animate.css">
-
-    <!-- stylesheets -->
-    <link rel="stylesheet" href="/assets/fonts/armantic/stylesheet.css">
-    <link rel="stylesheet" href="/assets/fonts/deadfontwalking/stylesheet.css">
-    <link rel="stylesheet" href="/assets/css/main.css">
-  <% else %>
-    <%= css :application, :media => 'screen' %>
-  <% end %>
+  <%= css :application, :media => 'screen' %>
 
 </head>
 <body ng-app="dod">
@@ -121,29 +111,7 @@
     </div>
   </footer>
 
-
-  <% if ENV['RACK_ENV'] == 'development' %>
-    <script src="/assets/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/assets/bower_components/angular/angular.js"></script>
-
-    <script src="/assets/javascripts/boot.js"></script>
-    <script src="/assets/javascripts/config.js"></script>
-
-    <!-- services -->
-    <script src="/assets/javascripts/shared/services/getCharacter.js"></script>
-
-    <!-- filters -->
-    <script src="/assets/javascripts/shared/filters/clearName.js"></script>
-
-    <!-- directives -->
-    <script src="/assets/javascripts/shared/directives/goTo.js"></script>
-    <script src="/assets/javascripts/shared/directives/characterImage.js"></script>
-
-    <!-- modules -->
-    <script src="/assets/javascripts/modules/characters/characterCtrl.js"></script>
-  <% else %>
-    <%= js :application %>
-  <% end %>
+  <%= js :application %>
 
   <!-- GA -->
   <script>
