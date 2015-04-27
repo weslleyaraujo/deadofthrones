@@ -8,6 +8,7 @@ gem 'mongoid'
 gem 'nokogiri'
 gem 'rake'
 gem 'sinatra'
+gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
 
 group :development do
   gem 'pry'
