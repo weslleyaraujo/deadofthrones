@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="/assets/fonts/deadfontwalking/stylesheet.css">
     <link rel="stylesheet" href="/assets/css/main.css">
   <% else %>
-    <link rel="stylesheet" href="/assets/css/application.min.css">
+    <%= css :application, :media => 'screen' %>
   <% end %>
 
 </head>
@@ -142,7 +142,7 @@
     <!-- modules -->
     <script src="/assets/javascripts/modules/characters/characterCtrl.js"></script>
   <% else %>
-    <script src="/assets/javascripts/application.min.js"></script>
+    <%= js :application %>
   <% end %>
 
   <!-- GA -->
